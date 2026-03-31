@@ -100,7 +100,7 @@ self.lyaer2 = nn.Linear(5, 1)
 $$\sigma(x)=\dfrac{1}{1+e^{-x}}$$
 我们设置 batch\_size=4 ，并得到了最后的网络架构。 
 
-	\section*{神经网络简介}
+	\section*{二、神经网络简介}
 	
 	\subsection*{介绍}
 	神经网络中的结构如下所示，并且他有着这样的解释：
@@ -154,7 +154,7 @@ $$\sigma(x)=\dfrac{1}{1+e^{-x}}$$
 	
 	在多层神经网络中，我们一般采用 ReLU 函数作为非线性函数，其更容易收敛，并且预测性能较好。对于训练，我们采用的方式仍然是优化和泛化。
 	
-	\section{反向传播算法原理}
+	\section*{三、反向传播算法原理}
 	
 	本实验采用一个包含输入层、隐藏层和输出层的三层前馈神经网络来解决 XOR 二分类问题。网络输入为二维向量
 	\[
@@ -297,7 +297,7 @@ $$\sigma(x)=\dfrac{1}{1+e^{-x}}$$
 	\]
 	其中 $\sigma(\cdot)$ 表示 sigmoid 函数。训练时通过反向传播计算梯度，再不断更新参数，使预测值 $\hat{Y}$ 逐步接近真实标签 $Y$。
 	
-	\section*{四、实验步骤}
+	\section*{五、实验步骤}
 	\begin{enumerate}
 		\item 构造 XOR 数据集，并把输入和标签都转成张量；
 		\item 为了方便处理偏置，在输入后额外拼接一列常数 1；
@@ -308,7 +308,7 @@ $$\sigma(x)=\dfrac{1}{1+e^{-x}}$$
 		\item 在训练结束后，对四组 XOR 输入进行预测，并将结果可视化展示。
 	\end{enumerate}
 	
-	\section*{五、核心代码}
+	\section*{六、核心代码}
 	下面是本次实验使用的主要代码。为了和运行结果保持一致，这里保留了我实际写程序时的网络结构和训练参数。Code of this part is available at \footnote{https://github.com/HaoranYuandomestic/ex1\_BP\_algorithm.git}
 	
 	\begin{lstlisting}
@@ -366,7 +366,7 @@ print("Predicted outputs:")
 print(y_pred.cpu().numpy())
 	\end{lstlisting}
 	
-	\section*{六、实验结果与分析}
+	\section*{七、实验结果与分析}
 	从训练结果来看，模型最后是能够把 XOR 这四组样本分清楚的。训练初期损失下降比较快，后面在 200 轮左右有一段比较平缓的阶段，再继续训练后，损失逐渐逼近 0，说明网络已经基本收敛。
 	
 	如果把预测结果按 0/1 来看，四组输入对应的输出和真实值是一致的，也就是：
@@ -385,7 +385,7 @@ print(y_pred.cpu().numpy())
 		\caption{训练损失曲线与 XOR 预测结果对比}
 	\end{figure}
 	
-	\section*{七、实验总结}
+	\section*{八、实验总结}
 	在本次实验中，我们实现了前馈神经网络最基本的架构：数据输入、网络搭建、前向传播、损失计算、反向传播、参数更新以及结果可视化。并直观的感受神经网络在分类问题的强大之处。另外，我们将数据具体化，以数据体现隐藏层的作用。
 	
 \end{document}
